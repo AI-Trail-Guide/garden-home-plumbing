@@ -1,0 +1,7 @@
+# robots.txt — Garden Home Plumbing & Drain LLC
+# UPDATE BEFORE LAUNCH: replace gardenhomeplumbingdrain.com with the live domain
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.gardenhomeplumbingdrain.com/sitemap.xml
