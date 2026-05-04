@@ -49,7 +49,7 @@
           navLinkHTML(false) +
         '</nav>' +
         '<div class="nav-phone">' +
-          '<a href="tel:+15037530225" aria-label="Call Garden Home Plumbing at (503) 753-0225">Call Now &nbsp;(503) 753-0225</a>' +
+          '<a href="https://calendar.app.google/XFbJT9P8hAxhxHdA9" target="_blank" rel="noopener noreferrer" aria-label="Schedule a call with Garden Home Plumbing">Schedule a Call</a>' +
         '</div>' +
         '<button class="nav-hamburger" id="ghp-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="ghp-mobile-menu">' +
           '<span></span>' +
@@ -59,7 +59,7 @@
       '</div>' +
       '<nav class="nav-mobile-menu" id="ghp-mobile-menu" aria-label="Mobile navigation">' +
         navLinkHTML(true) +
-        '<a href="tel:+15037530225" class="nav-mobile-phone" aria-label="Call Garden Home Plumbing at (503) 753-0225">Call Now &nbsp;(503) 753-0225</a>' +
+        '<a href="https://calendar.app.google/XFbJT9P8hAxhxHdA9" class="nav-mobile-phone" target="_blank" rel="noopener noreferrer" aria-label="Schedule a call with Garden Home Plumbing">Schedule a Call</a>' +
       '</nav>' +
     '</header>';
 
@@ -75,7 +75,6 @@
           '<address>' +
             '6725 SW Florence Ln<br>' +
             'Portland, OR 97223<br><br>' +
-            '<a href="tel:+15037530225">(503) 753-0225</a><br>' +
             '<a href="mailto:gardenhomeplumbing@gmail.com">gardenhomeplumbing@gmail.com</a><br><br>' +
             'CCB#198010 &nbsp;|&nbsp; Licensed, Bonded &amp; Insured' +
           '</address>' +
