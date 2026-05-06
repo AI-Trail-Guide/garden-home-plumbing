@@ -230,8 +230,8 @@ p:last-child {
 
 .nav-phone a {
   display: inline-block;
-  background: #FF6600;
-  color: var(--text-dark);
+  background: var(--gold);
+  color: var(--text-dark); /* dark text on gold — passes WCAG AA (5.04:1) */
   font-size: 16px;
   font-weight: 700;
   font-family: var(--font-body);
@@ -242,7 +242,7 @@ p:last-child {
 }
 
 .nav-phone a:hover {
-  background: #E55A00;
+  background: var(--gold-dark);
   color: var(--text-dark);
 }
 
@@ -312,7 +312,7 @@ p:last-child {
 .nav-mobile-phone {
   display: block;
   margin-top: 16px;
-  background: #FF6600;
+  background: var(--gold);
   color: var(--text-dark) !important;
   font-weight: 700;
   text-align: center;
@@ -323,7 +323,7 @@ p:last-child {
 }
 
 .nav-mobile-phone:hover {
-  background: #E55A00;
+  background: var(--gold-dark);
   text-decoration: none !important;
 }
 
@@ -492,8 +492,8 @@ p:last-child {
 /* Large phone number button */
 .btn-phone {
   display: inline-block;
-  background: #FF6600;
-  color: var(--text-dark);
+  background: var(--gold);
+  color: var(--text-dark); /* dark text on gold — passes WCAG AA (5.04:1) */
   font-family: var(--font-body);
   font-size: 30px;
   font-weight: 700;
@@ -505,7 +505,7 @@ p:last-child {
 }
 
 .btn-phone:hover {
-  background: #E55A00;
+  background: var(--gold-dark);
   color: var(--text-dark);
 }
 
