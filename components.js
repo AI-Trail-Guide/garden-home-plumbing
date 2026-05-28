@@ -97,7 +97,6 @@
           '<h4>Why Choose Us</h4>' +
           '<ul>' +
             '<li>Veteran-Owned &amp; Operated</li>' +
-            '<li>BBB A+ Rated</li>' +
             '<li>Angi Super Service Award</li>' +
             "<li>Serving Portland's West Side Since 2012</li>" +
           '</ul>' +
