@@ -571,8 +571,9 @@ p:last-child {
 }
 
 .trust-badges-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 24px;
   max-width: var(--max-width);
   margin: 0 auto;
@@ -584,6 +585,7 @@ p:last-child {
   flex-direction: column;
   align-items: center;
   gap: 14px;
+  flex: 0 0 200px;
 }
 
 .trust-badge-icon {
@@ -854,6 +856,10 @@ p:last-child {
   margin-bottom: 48px;
 }
 
+.review-stat {
+  text-align: center;
+}
+
 .review-stat-number {
   display: block;
   font-family: var(--font-heading);
@@ -873,8 +879,9 @@ p:last-child {
    EXTERNAL REVIEW LINKS
    ============================================ */
 .review-links {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: var(--card-gap);
 }
 
@@ -886,6 +893,8 @@ p:last-child {
   text-align: center;
   transition: box-shadow 0.2s, transform 0.2s;
   color: var(--text-dark);
+  flex: 0 0 340px;
+  max-width: 100%;
 }
 
 .review-link-card:hover {
@@ -976,8 +985,9 @@ p:last-child {
    CREDENTIALS GRID
    ============================================ */
 .credentials-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -987,6 +997,7 @@ p:last-child {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   padding: 24px 16px;
   text-align: center;
+  flex: 0 0 calc(25% - 15px);
 }
 
 .credential-icon {
@@ -1188,19 +1199,11 @@ p:last-child {
   }
 
   .trust-badges-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
   }
 
-  .credentials-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .review-links {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-    margin-left: auto;
-    margin-right: auto;
+  .credential-item {
+    flex: 0 0 calc(50% - 10px);
   }
 
   .footer-main {
@@ -1255,10 +1258,8 @@ p:last-child {
   .services-grid      { grid-template-columns: 1fr; }
   .testimonials-grid  { grid-template-columns: 1fr; }
   .area-grid          { grid-template-columns: repeat(2, 1fr); }
-  .credentials-grid   { grid-template-columns: repeat(2, 1fr); }
 
   .trust-badges-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
 
