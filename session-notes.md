@@ -67,6 +67,35 @@ Vercel auto-deploys within ~30 seconds of every push.
 
 ## Session history
 
+### Session: 2026-05-28
+
+#### Removals
+- Removed all "tankless" references from `index.html` and `services.html`
+- Removed all BBB references sitewide: meta descriptions, og tags, schema `sameAs`, hero copy, trust badges, credentials grid, review stats bar, review link card, footer "Why Choose Us" list (`components.js`)
+
+#### Yelp corrections
+- Yelp rating updated 4.9 → 4.5 across all 6 HTML files
+- Yelp review count updated 44 → 43 across all 6 HTML files (one stat display `44` in `reviews.html` was missed and corrected in a follow-up pass)
+
+#### Image swap
+- `about-team_NEW.jpg` renamed to `about-team.jpg` (AI-generated placeholder, replaces original two-person photo)
+- Original saved as `about-team_OLD.jpg` (safe to delete)
+- Image inventory created at `docs/image-inventory.md`
+
+#### CSS centering fix
+- Switched `.trust-badges-grid`, `.credentials-grid`, `.review-links` from fixed-column CSS Grid to flexbox with `justify-content: center` — items now center regardless of count
+- Added `text-align: center` to `.review-stat`
+- Updated responsive breakpoints to remove stale `grid-template-columns` overrides
+
+#### 12-task copy pass
+- `index.html` — rewrote two paragraphs in "Why Portland Homeowners Call Us Back": trades timeline anchored to 2012, Garden Home neighborhood name origin
+- `about.html` — rewrote veteran-to-trades arc with plumbing license number (PB1260) and military-discipline framing; added Angi Super Service Award to meta and og descriptions
+- `services.html` — rewrote water heater section with Portland winters / aging homes angle; rewrote repiping section with pre-1970s west side housing stock context
+- `service-area.html` — removed "proudly serves" boilerplate; added Derek's primary communities and housing stock context paragraph
+- `reviews.html` — added Angi Super Service Award to meta/og descriptions; CTA heading changed to "See Why West Portland Trusts Us"
+
+---
+
 ### Session: 2026-05-12
 - Reviewed full project status (no code changes this session)
 - Confirmed the custom domain (`gardenhomeplumbing.com`) is registered through **HostGator** — cPanel login at `https://gator4080.hostgator.com`
