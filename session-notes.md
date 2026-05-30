@@ -67,6 +67,21 @@ Vercel auto-deploys within ~30 seconds of every push.
 
 ## Session history
 
+### Session: 2026-05-29
+
+#### Copy tightening pass (15 changes across 4 files)
+- `index.html` — H1 rewritten ("Portland Plumber. Veteran-Owned. Serving Portland's West Side Since 2012."); tagline shortened; services intro shortened; two body sentences rewritten for directness; "follow-ups so nothing gets missed" → "callbacks"
+- `services.html` — page header subhead shortened to "Honest work. Fair prices."; drain section opening rewritten; pricing block "No surprises, no hidden costs." removed
+- `about.html` — customer praise sentence tightened; closing paragraph replaced with "We'd rather have 50 customers who trust us than 500 who don't know who's showing up."
+- `reviews.html` — page header subhead shortened; bottom-cta `<h2>` removed entirely; CTA support text updated to "Call us. We'll get it scheduled."
+- **Flagged (not found, no change made):** services.html change #7 (water heater paragraph already rewritten in previous session); service-area.html change #15 (page intro already updated in previous session); reviews.html change #13 exact string not found (heading had been updated to "See Why West Portland Trusts Us" — intent applied, `<h2>` removed)
+
+#### contact.html edits
+- Page header subhead updated: "The fastest way to reach us is to call. We're quick to answer and quick to schedule." → "Call us. We answer, and scheduling is quick."
+- Redundant `<p>` below phone button removed ("Call us. It's the fastest way to get help.")
+
+---
+
 ### Session: 2026-05-28
 
 #### Removals
