@@ -1,12 +1,12 @@
 # Garden Home Plumbing — Session Notes
-*Last updated: 2026-05-12*
+*Last updated: 2026-06-12*
 
 ## Project
 Static HTML website for **Garden Home Plumbing & Drain LLC**
 - Owner: Derek Marsh (veteran-owned, solo plumber)
 - Phone: (503) 753-0225
 - Email: gardenhomeplumbing@gmail.com
-- Address: 6725 SW Florence Ln, Portland, OR 97223
+- Address: 6725 SW Florence Ln, Portland, OR 97223 — STALE (removed from site; Derek moved to Woodburn, exact address unconfirmed)
 - Hours: Mon–Thu 8am–5pm, Fri 8am–4pm
 
 ## Live URLs
@@ -40,6 +40,21 @@ git log --oneline — shows recent commits
 
 ---
 
+## Standing Procedures
+
+### Master Plan update workflow
+The file `docs/Derek_Account_Transition_Master_Plan.md` is a local-only copy (excluded from git) of the master plan kept in the Claude.ai project knowledge base.
+
+**When Claude.ai gives you a section to update:**
+1. Tell Claude Code what section changed and paste the new content
+2. Claude Code updates `docs/Derek_Account_Transition_Master_Plan.md` — both the changed section AND the two `**Last updated:**` fields at the top and inside the Current State section
+3. Claude Code creates a new dated folder at:
+   `~/Desktop/AI Stuff/AI Trail Guide/Plumber - DEREK/Claude Project Files/CURRENT MASTER PLAN/updated [M-DD-YYYY]/`
+   and copies the updated file into it
+4. You upload that file to the Claude.ai project to replace the old version
+
+---
+
 ## Deployment workflow
 Any change to the site:
 ```
@@ -66,6 +81,69 @@ Vercel auto-deploys within ~30 seconds of every push.
 ```
 
 ## Session history
+
+### Session: 2026-06-12
+
+#### Image swap — about-derek
+- Replaced `about-derek.jpg` with new AI-generated PNG portrait (`about-derek_NEW.png` → `about-derek.png`) — plumber with tablet standing in front of branded van
+- Updated `about.html` `<img>` src and og:image meta tag to reference `.png` extension
+
+#### Physical address removed sitewide
+- Removed `6725 SW Florence Ln / Portland, OR 97223` from every location on the site:
+  - JSON-LD schema (`streetAddress` + `postalCode` fields) in all 6 HTML files
+  - Visible "Address" row in the contact page info block
+  - Site footer in `components.js` (this is what showed on every page)
+- City/state (`Portland, OR`) and `addressCountry` retained in schema
+
+#### Wilsonville added to service area
+- Added Wilsonville to the community grid in `service-area.html` and to the `areaServed` schema list
+- Grid was previously 16 items (even 4×4). Adding Wilsonville made 17 — resolved by giving "Surrounding Portland areas" a `grid-column: 1 / -1` full-width span at the bottom (added `.area-grid-item--full` CSS modifier)
+
+#### Contact form — Formspree setup initiated (pending)
+- Formspree account created (under Wayne's email); destination set to `gardenhomeplumbing@gmail.com`
+- **Blocked:** waiting on Derek to click the one-time verification email Formspree sent to gardenhomeplumbing@gmail.com
+- Once Derek clicks confirm, next step is to drop the Formspree form ID into the form `action` attribute in `contact.html` and remove the fake submit handler
+
+---
+
+### Session: 2026-05-30
+
+- Full presence audit run 2026-05-30: 14 URLs checked. Files created/overwritten: investigation/presence-audit.md, investigation/listings.json, investigation/screenshots/ (14 screenshots). No site files were modified.
+
+#### Listing investigation (read-only — no site files changed)
+- Ran Playwright/Chromium headless browser check against Google Maps and Yelp listings
+- Files created: `investigation/listing-check-findings.md`, `investigation/gbp_maps.png`, `investigation/yelp.png`, `investigation/check-listings.js` (all excluded from git via `.gitignore`)
+- Google Maps: listing confirmed live, name and phone match canonical, no "Claim this business" link found (suggestive of claimed). No website URL linked to listing — needs to be added once custom domain is live.
+- Yelp: hard bot-block, no data extractable. Last known state (2026-05-28): 4.5 stars, 43 reviews, Claimed.
+
+#### Hero H1 update
+- Replaced "Serving Portland's West Side Since 2012" with "20+ Years of Experience" in `index.html` hero H1 — removes contradiction with tagline, puts stronger credential in headline
+- Dropped "20+ years of experience" from hero sub (was redundant after H1 change)
+
+#### Image swaps
+- Replaced five service images with new AI-generated photos: `service-disposal.jpg`, `service-drain.jpg`, `service-leak.jpg`, `service-repiping.jpg`, `service-water-main.jpg`
+- Old versions saved as `_OLD` backups (not committed)
+- Additional swaps later in session: `service-leak.jpg` (second replacement), `about-derek.jpg`, `service-remodel.jpg`
+
+#### GBP update
+- Google Business Profile claimed by Wayne. Google account confirmed. No website linked yet (pending domain connection). No Google reviews visible.
+
+#### Derek call — May 30, 2026
+- Derek viewed the new website live on the call and gave informal verbal approval
+- Contact form decision resolved: wire to Gmail
+- Derek chose Option 3 (neighbor with guide from Wayne) for account transition — formal Phase 1 at $375 will not occur; compensation arrangement undefined
+- Derek confirmed Wilsonville should be added to website service area and GBP service area
+- Derek has moved to Woodburn — exact address unconfirmed; Florence Ln address is stale pending confirmation
+- New HP EliteDesk is fully set up — Derek and Lani configured QuickBooks, Gmail, and Yahoo on it themselves
+- Wall-hung toilet image flagged for possible swap on services page
+- Second HostGator password identified from Lani's list (marked "not used") — to be tested against billing portal
+
+#### Project infrastructure
+- `CLAUDE.md` created in project root — auto-loaded by Claude Code on every session, documents startup instructions and master plan update workflow
+- `docs/Derek_Account_Transition_Master_Plan.md` added (local-only, excluded from git) — copy of the Claude.ai project master plan, updated via standing workflow
+- Master plan update workflow documented in Standing Procedures section of this file
+
+---
 
 ### Session: 2026-05-29
 
@@ -139,34 +217,41 @@ Vercel auto-deploys within ~30 seconds of every push.
 
 ## Pending / next steps
 
-### 1. Contact form (BLOCKED — waiting on two keys)
-The form in `contact.html` currently shows a fake success message on submit. Plan is to wire it up with **Formspree + Google reCAPTCHA v2**.
+### 1. Contact form — IN PROGRESS (waiting on Derek)
+Formspree account set up. Destination email: `gardenhomeplumbing@gmail.com`. Blocked on Derek clicking the verification email Formspree sent to that Gmail. Once confirmed, drop the Formspree form ID into the `action` attribute on the `<form>` in `contact.html` and remove the fake submit handler JS block.
 
-Code is ready to write once you have:
-- **Formspree form ID** — sign up at formspree.io, create a form pointed at `gardenhomeplumbing@gmail.com`, get an ID like `xabc1234`
-- **Google reCAPTCHA v2 site key** — register at google.com/recaptcha, choose "I'm not a robot" checkbox, add `gardenhomeplumbing.com` as the domain (also add `localhost` for testing), get a Site Key
+### 2. About page photo
+Wayne to composite a photo of Derek from selfie and truck wrap images. AI placeholder (`about-team.jpg`) is still live.
 
-Once you have both keys, Claude can wire up the form in one session. Formspree free tier allows 50 submissions/month, which is plenty for a solo plumber.
+### 3. Wilsonville — DONE on website, GBP still pending
+Added to `service-area.html` grid and schema (2026-06-12). Still needs to be added to the GBP service area listing.
 
-### 2. Custom domain (IN PROGRESS)
+### 4. Wall-hung toilet image
+`service-toilet.jpg` flagged by Derek for possible replacement. Low priority until a better image is available.
+
+### 5. Custom domain (IN PROGRESS — gated on HostGator billing portal access)
 Domain `gardenhomeplumbing.com` is registered through **HostGator**. cPanel login: `https://gator4080.hostgator.com`
+- cPanel password confirmed working
+- Billing portal password still unresolved — a second credential from Lani's list (marked "not used") exists to test
+- DNS steps are ready to execute once HostGator access is confirmed through Derek's account transition work
 
-Steps to complete connection:
-1. Log in to Vercel → select the project → **Settings > Domains** → add `gardenhomeplumbing.com`
-2. Vercel will display the DNS records needed — keep that tab open
-3. Log in to HostGator cPanel → **Zone Editor** → **Manage** next to the domain
-4. Add these two records:
+DNS records needed when ready:
 
 | Type | Name | Value |
 |------|------|-------|
 | A | `@` | `76.76.21.21` |
 | CNAME | `www` | `cname.vercel-dns.com` |
 
-5. If an A record for `@` already exists, edit it rather than adding a new one
-6. DNS propagation takes 15 min – 2 hours; Vercel will show a green checkmark and auto-issue SSL when it detects the records
+After domain is pointed: add website URL to GBP listing.
 
-### 3. Planning files in GitHub
-`wireframe-plan.md`, `research-brief.md`, and `style-guide.md` are committed to the public GitHub repo. Consider adding them to `.gitignore` before going fully public if you'd prefer they not be visible.
+### 6. Derek's address — removed from site, GBP still needs update
+Florence Ln address removed from all website pages (2026-06-12) — schema, contact page, and footer. Derek moved to Woodburn; exact address unconfirmed. Still needs to update CCB registration and GBP listing once Woodburn address is confirmed.
+
+### 7. Derek neighbor / account transition timeline
+Derek chose Option 3 (neighbor with guide from Wayne) for the account transition. No timeline set for them to sit down. Follow up to establish a date.
+
+### 8. Planning files in GitHub
+`wireframe-plan.md`, `research-brief.md`, and `style-guide.md` are committed to the public GitHub repo. Add them to `.gitignore` before the repo is referenced publicly.
 
 ## Tech setup (already done)
 - Git configured: username `AI-Trail_Guide`, email `wayne@aitrailguide.com`
