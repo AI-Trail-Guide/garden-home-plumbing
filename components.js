@@ -73,8 +73,6 @@
         '<div class="footer-col">' +
           '<h4>Garden Home Plumbing &amp; Drain LLC</h4>' +
           '<address>' +
-            '6725 SW Florence Ln<br>' +
-            'Portland, OR 97223<br><br>' +
             '<a href="tel:+15037530225">(503) 753-0225</a><br>' +
             '<a href="mailto:gardenhomeplumbing@gmail.com">gardenhomeplumbing@gmail.com</a><br><br>' +
             'CCB#198010 &nbsp;|&nbsp; Licensed, Bonded &amp; Insured' +
