@@ -816,6 +816,10 @@ p:last-child {
   border-right: 1px solid var(--border);
 }
 
+.area-grid-item--full {
+  grid-column: 1 / -1;
+}
+
 /* ============================================
    NOT SURE BLOCK (service area page)
    ============================================ */
